@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Fitness App — Onboarding Journey (Clickable Prototype)</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tabler-icons/2.44.0/iconfont/tabler-icons.min.css">
+<style>
+  :root{
+    --surface-0:#f4f3ef;
+    --surface-1:#ffffff;
+    --surface-2:#fbfaf8;
+    --text-primary:#1c1c1a;
+    --text-secondary:#5f5e5a;
+    --text-muted:#93928c;
+    --text-accent:#0c447c;
+    --border:#e3e1da;
+    --border-strong:#c9c7bf;
+    --border-stronger:#a9a79e;
+    --border-accent:#378ade;
+    --bg-accent:#e6f1fb;
+    --bg-success:#eaf3de;
+    --text-success:#27500a;
+    --fill-primary:#1c1c1a;
+    --on-primary:#ffffff;
+    --fill-accent:#378ade;
+    --radius:8px;
+    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, sans-serif;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--surface-0);
+    font-family:var(--font-sans);
+    color:var(--text-primary);
+    padding:32px 16px;
+  }
+  .page-title{
+    text-align:center;
+    font-size:13px;
+    color:var(--text-muted);
+    margin-bottom:4px;
+  }
+  h1{
+    text-align:center;
+    font-size:20px;
+    font-weight:500;
+    margin:0 0 20px;
+  }
+  #stepper{
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+    justify-content:center;
+    margin-bottom:24px;
+    max-width:900px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+  #stepper button{
+    font-size:12px;
+    padding:6px 10px;
+    border-radius:20px;
+    border:0.5px solid var(--border);
+    background:var(--surface-1);
+    color:var(--text-secondary);
+    cursor:pointer;
+  }
+  .layout{
+    display:flex;
+    gap:24px;
+    flex-wrap:wrap;
+    align-items:flex-start;
+    justify-content:center;
+    max-width:900px;
+    margin:0 auto;
+  }
+  .phone-wrap{
+    background:var(--surface-1);
+    border-radius:12px;
+    padding:20px;
+  }
+  .phone{
+    width:280px;
+    height:560px;
+    background:var(--surface-2);
+    border:0.5px solid var(--border-strong);
+    border-radius:28px;
+    padding:12px;
+    position:relative;
+    display:flex;
+    flex-direction:column;
+  }
+  .notch{
+    width:70px;height:6px;
+    background:var(--border-stronger);
+    border-radius:4px;
+    margin:0 auto 10px;
+  }
+  .screen-frame{
+    flex:1;
+    border:0.5px solid var(--border);
+    border-radius:16px;
+    overflow:hidden;
+    position:relative;
+    background:var(--surface-0);
+  }
+  .scr{
+    display:none;
+    flex-direction:column;
+    height:100%;
+    padding:22px 16px;
+    text-align:left;
+  }
+  .scr.active{display:flex;}
+  button{
+    font-family:inherit;
+    font-size:13px;
+    padding:10px;
+    border-radius:var(--radius);
+    border:0.5px solid var(--border-strong);
+    background:var(--surface-1);
+    color:var(--text-primary);
+    cursor:pointer;
+  }
+  button:hover{background:var(--surface-0);}
+  input{
+    width:100%;
+    height:34px;
+    padding:0 10px;
+    border-radius:var(--radius);
+    border:0.5px solid var(--border);
+    background:var(--surface-1);
+    font-size:12px;
+    color:var(--text-secondary);
+  }
+  .notes-col{
+    flex:1;
+    min-width:260px;
+    max-width:340px;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+  }
+  .note-card{
+    background:var(--bg-accent);
+    border-radius:12px;
+    padding:14px 16px;
+  }
+  .note-card p:first-child{
+    font-size:14px;font-weight:500;color:var(--text-accent);margin:0 0 6px;
+  }
+  .note-card p:last-child{
+    font-size:13px;color:var(--text-primary);margin:0;line-height:1.6;
+  }
+  .flow-card{
+    background:var(--surface-1);
+    border-radius:12px;
+    padding:12px 16px;
+    font-size:12px;
+    color:var(--text-secondary);
+    line-height:1.8;
+  }
+</style>
+</head>
+<body>
+
+<div class="page-title">Task 04 — SkillCraft Technology</div>
+<h1>Fitness App · Onboarding User Journey (Mobile, Lo-Fi)</h1>
+<div id="stepper"></div>
+
+<div class="layout">
+
+  <div class="phone-wrap">
+    <div class="phone">
+      <div class="notch"></div>
+      <div class="screen-frame">
+
+        <div class="scr active" data-i="0">
+          <div style="flex:1; display:flex; flex-direction:column; justify-content:center; align-items:center; gap:10px; text-align:center;">
+            <div style="width:48px; height:48px; border:0.5px solid var(--border-strong); border-radius:12px; display:flex; align-items:center; justify-content:center;"><i class="ti ti-run" style="font-size:22px;"></i></div>
+            <div style="width:110px; height:12px; background:var(--surface-1); border-radius:3px;"></div>
+            <div style="width:150px; height:8px; background:var(--surface-1); border-radius:3px;"></div>
+          </div>
+          <button class="go" data-t="1" style="background:var(--fill-primary); color:var(--on-primary); border:none;">Get started</button>
+          <button class="go" data-t="2" style="margin-top:8px;">I already have an account</button>
+        </div>
+
+        <div class="scr" data-i="1">
+          <div style="align-self:flex-end; font-size:12px; color:var(--text-muted); cursor:pointer;" class="go" data-t="2">Skip</div>
+          <div style="flex:1; display:flex; flex-direction:column; justify-content:center; align-items:center; gap:10px; text-align:center;">
+            <div style="width:110px; height:110px; border:0.5px solid var(--border-strong); border-radius:12px; display:flex; align-items:center; justify-content:center;"><i id="carIcon" class="ti ti-target" style="font-size:40px;"></i></div>
+            <div style="width:120px; height:10px; background:var(--surface-1); border-radius:3px; margin-top:8px;"></div>
+            <div style="width:150px; height:8px; background:var(--surface-1); border-radius:3px;"></div>
+          </div>
+          <div id="dots" style="display:flex; justify-content:center; gap:6px; margin:10px 0;"></div>
+          <button id="carNext" style="background:var(--fill-primary); color:var(--on-primary); border:none;">Next</button>
+        </div>
+
+        <div class="scr" data-i="2">
+          <p style="font-size:14px; font-weight:500; text-align:center; margin:0 0 4px;">Create your account</p>
+          <p style="font-size:12px; color:var(--text-muted); text-align:center; margin:0 0 16px;">Sign up to get started</p>
+          <label style="font-size:11px; color:var(--text-muted);">Email</label>
+          <input type="text" placeholder="you@example.com" readonly style="margin:4px 0 10px;">
+          <label style="font-size:11px; color:var(--text-muted);">Password</label>
+          <input type="text" placeholder="••••••••" readonly style="margin-top:4px;">
+          <button class="go" data-t="3" style="margin-top:16px; background:var(--fill-primary); color:var(--on-primary); border:none;">Create account</button>
+          <p style="text-align:center; font-size:10px; color:var(--text-muted); margin:12px 0;">or continue with</p>
+          <div style="display:flex; gap:8px;">
+            <button class="go" data-t="3" style="flex:1;">Google</button>
+            <button class="go" data-t="3" style="flex:1;">Apple</button>
+          </div>
+        </div>
+
+        <div class="scr" data-i="3">
+          <p style="font-size:14px; font-weight:500; margin:0 0 12px;">Tell us about yourself</p>
+          <label style="font-size:11px; color:var(--text-muted);">Full name</label>
+          <input type="text" value="Alex Rivera" readonly style="margin:4px 0 8px;">
+          <label style="font-size:11px; color:var(--text-muted);">Age</label>
+          <input type="text" value="28" readonly style="margin:4px 0 8px;">
+          <div style="display:flex; gap:8px;">
+            <div style="flex:1;"><label style="font-size:11px; color:var(--text-muted);">Height</label><input type="text" value="170 cm" readonly style="margin-top:4px;"></div>
+            <div style="flex:1;"><label style="font-size:11px; color:var(--text-muted);">Weight</label><input type="text" value="65 kg" readonly style="margin-top:4px;"></div>
+          </div>
+          <div style="display:flex; gap:8px; margin-top:auto;">
+            <button class="go" data-t="2" style="flex:1;">Back</button>
+            <button class="go" data-t="4" style="flex:1; background:var(--fill-primary); color:var(--on-primary); border:none;">Continue</button>
+          </div>
+        </div>
+
+        <div class="scr" data-i="4">
+          <p style="font-size:14px; font-weight:500; margin:0 0 2px;">What's your main goal?</p>
+          <p style="font-size:11px; color:var(--text-muted); margin:0 0 14px;">Pick one to personalize your plan</p>
+          <div id="goals" style="display:flex; flex-direction:column; gap:8px;"></div>
+          <div style="display:flex; gap:8px; margin-top:auto;">
+            <button class="go" data-t="3" style="flex:1;">Back</button>
+            <button class="go" data-t="5" style="flex:1; background:var(--fill-primary); color:var(--on-primary); border:none;">Continue</button>
+          </div>
+        </div>
+
+        <div class="scr" data-i="5">
+          <p style="font-size:14px; font-weight:500; margin:0 0 2px;">What's your activity level?</p>
+          <p style="font-size:11px; color:var(--text-muted); margin:0 0 14px;">Helps us set a realistic starting point</p>
+          <div id="levels" style="display:flex; flex-direction:column; gap:8px;"></div>
+          <div style="display:flex; gap:8px; margin-top:auto;">
+            <button class="go" data-t="4" style="flex:1;">Back</button>
+            <button class="go" data-t="6" style="flex:1; background:var(--fill-primary); color:var(--on-primary); border:none;">Continue</button>
+          </div>
+        </div>
+
+        <div class="scr" data-i="6" style="text-align:center;">
+          <div style="flex:1; display:flex; flex-direction:column; justify-content:center; align-items:center; gap:10px;">
+            <div style="width:48px; height:48px; border-radius:50%; background:var(--bg-success); display:flex; align-items:center; justify-content:center;"><i class="ti ti-check" style="font-size:22px; color:var(--text-success);"></i></div>
+            <div style="width:130px; height:12px; background:var(--surface-1); border-radius:3px; margin-top:6px;"></div>
+            <div style="width:160px; height:8px; background:var(--surface-1); border-radius:3px;"></div>
+          </div>
+          <button class="go" data-t="7" style="background:var(--fill-primary); color:var(--on-primary); border:none;">Go to my dashboard</button>
+        </div>
+
+        <div class="scr" data-i="7" style="padding-bottom:0;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+            <div style="width:80px; height:10px; background:var(--surface-1); border-radius:3px;"></div>
+            <div style="width:26px; height:26px; border-radius:50%; background:var(--surface-1);"></div>
+          </div>
+          <div style="display:flex; gap:8px; margin-bottom:10px;">
+            <div style="flex:1; background:var(--surface-1); border-radius:var(--radius); padding:10px; text-align:center;"><div style="font-size:16px; font-weight:500;">65%</div><div style="font-size:9px; color:var(--text-muted);">Goal progress</div></div>
+            <div style="flex:1; background:var(--surface-1); border-radius:var(--radius); padding:10px; text-align:center;"><div style="font-size:16px; font-weight:500;">3</div><div style="font-size:9px; color:var(--text-muted);">Day streak</div></div>
+          </div>
+          <div style="background:var(--surface-1); border-radius:var(--radius); height:70px; margin-bottom:8px; display:flex; align-items:center; justify-content:center; font-size:10px; color:var(--text-muted);">Today's workout</div>
+          <div style="background:var(--surface-1); border-radius:var(--radius); flex:1; display:flex; align-items:center; justify-content:center; font-size:10px; color:var(--text-muted);">Activity chart</div>
+          <div style="display:flex; justify-content:space-around; padding:10px 0; border-top:0.5px solid var(--border); margin-top:8px;">
+            <i class="ti ti-home" style="font-size:16px; color:var(--text-accent);"></i>
+            <i class="ti ti-chart-bar" style="font-size:16px; color:var(--text-muted);"></i>
+            <i class="ti ti-target" style="font-size:16px; color:var(--text-muted);"></i>
+            <i class="ti ti-user" style="font-size:16px; color:var(--text-muted);"></i>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="notes-col">
+    <div class="note-card">
+      <p id="noteTitle"></p>
+      <p id="noteBody"></p>
+    </div>
+    <div class="flow-card">
+      Welcome → Onboarding → Sign up → Profile → Goal → Activity level → Confirm → Home
+    </div>
+  </div>
+
+</div>
+
+<script>
+const steps=["Welcome","Onboarding","Sign up","Profile","Goal","Activity","Confirm","Home"];
+const stepper=document.getElementById('stepper');
+steps.forEach((s,i)=>{
+  const b=document.createElement('button');
+  b.textContent=(i+1)+". "+s;
+  b.onclick=()=>go(i);
+  stepper.appendChild(b);
+});
+
+const notes=[
+  ["Welcome screen","One clear primary action, plus a quiet secondary path for returning users."],
+  ["Onboarding carousel","Short, always skippable, so people who already know the app aren't slowed down."],
+  ["Sign up","Only email and password up front, with social sign-in as a faster alternative."],
+  ["Profile setup","Basic bio-data only, with a back button now that real personal data is involved."],
+  ["Fitness goal","Single-select cards, one tap, since this drives the rest of the personalization."],
+  ["Activity level","Plain-language options so people can self-assess without a fitness background."],
+  ["Confirmation","A dedicated 'you're set up' moment before dropping into the app."],
+  ["Home dashboard","Echoes the goal and level chosen earlier as an immediate payoff."]
+];
+
+function go(i){
+  document.querySelectorAll('.scr').forEach(s=>s.classList.remove('active'));
+  document.querySelector('.scr[data-i="'+i+'"]').classList.add('active');
+  document.querySelectorAll('#stepper button').forEach((b,idx)=>{
+    b.style.borderColor = idx===i ? 'var(--border-accent)' : 'var(--border)';
+    b.style.color = idx===i ? 'var(--text-accent)' : 'var(--text-secondary)';
+  });
+  document.getElementById('noteTitle').textContent = notes[i][0];
+  document.getElementById('noteBody').textContent = notes[i][1];
+}
+
+document.querySelectorAll('.go').forEach(el=>{
+  el.addEventListener('click', ()=>go(parseInt(el.dataset.t)));
+});
+
+const carouselData=[
+  {icon:'ti-target'},
+  {icon:'ti-chart-bar'},
+  {icon:'ti-trophy'}
+];
+let carIdx=0;
+function renderCarousel(){
+  const dots=document.getElementById('dots');
+  dots.innerHTML='';
+  carouselData.forEach((_,i)=>{
+    const d=document.createElement('div');
+    d.style.width = i===carIdx ? '16px' : '6px';
+    d.style.height='6px';
+    d.style.borderRadius='4px';
+    d.style.background = i===carIdx ? 'var(--fill-accent)' : 'var(--border-strong)';
+    dots.appendChild(d);
+  });
+  document.getElementById('carIcon').className = 'ti '+carouselData[carIdx].icon;
+  document.getElementById('carIcon').style.fontSize='40px';
+}
+document.getElementById('carNext').addEventListener('click', ()=>{
+  carIdx++;
+  if(carIdx>=carouselData.length){ carIdx=0; go(2); return; }
+  renderCarousel();
+});
+renderCarousel();
+
+const goalsData=[
+  {icon:'ti-flame', label:'Lose weight'},
+  {icon:'ti-barbell', label:'Build muscle'},
+  {icon:'ti-run', label:'Improve endurance'},
+  {icon:'ti-heart', label:'Stay active'}
+];
+const goalsEl=document.getElementById('goals');
+goalsData.forEach(g=>{
+  const row=document.createElement('div');
+  row.style.cssText="display:flex; align-items:center; gap:10px; padding:10px; border:0.5px solid var(--border); border-radius:var(--radius); cursor:pointer;";
+  row.innerHTML='<i class="ti '+g.icon+'" style="font-size:18px;"></i><span style="font-size:12px;">'+g.label+'</span>';
+  row.onclick=()=>{
+    goalsEl.querySelectorAll('div').forEach(r=>{ r.style.borderColor='var(--border)'; r.style.background='transparent'; });
+    row.style.borderColor='var(--border-accent)';
+    row.style.background='var(--bg-accent)';
+  };
+  goalsEl.appendChild(row);
+});
+
+const levelsData=['Beginner — just starting out','Intermediate — active sometimes','Advanced — train regularly'];
+const levelsEl=document.getElementById('levels');
+levelsData.forEach(l=>{
+  const row=document.createElement('div');
+  row.style.cssText="padding:10px; border:0.5px solid var(--border); border-radius:var(--radius); cursor:pointer; font-size:12px; text-align:center;";
+  row.textContent=l;
+  row.onclick=()=>{
+    levelsEl.querySelectorAll('div').forEach(r=>{ r.style.borderColor='var(--border)'; r.style.background='transparent'; });
+    row.style.borderColor='var(--border-accent)';
+    row.style.background='var(--bg-accent)';
+  };
+  levelsEl.appendChild(row);
+});
+
+go(0);
+</script>
+</body>
+</html>
